@@ -1,0 +1,43 @@
+{
+	"schemaVersion": 1,
+	"id": "earlyloadingscreen",
+	"version": "${version}",
+	"name": "Early Loading Screen",
+	"description": "A mod that shows a loading screen early when the game loads.",
+	"authors": [
+		"ishland"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/early-loading-screen/",
+		"sources": "https://github.com/ishland/EarlyLoadingScreen",
+		"issues": "https://github.com/ishland/EarlyLoadingScreen/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/earlyloadingscreen/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.ishland.earlyloadingscreen.TheMod"
+		],
+		"preLaunch": [
+			"com.ishland.earlyloadingscreen.PreLaunchHandler"
+		]
+	},
+	"accessWidener": "earlyloadingscreen.accesswidener",
+	"mixins": [
+		"earlyloadingscreen.mixins.json"
+	],
+	"languageAdapters": {
+		"earlyloadingscreen:languageAdapterEarlyLaunch": "com.ishland.earlyloadingscreen.LanguageAdapterLaunch"
+	},
+	"depends": {
+		"fabricloader": ">=0.14.23",
+		"minecraft": ">=1.21.2-rc.1",
+		"java": ">=17"
+	},
+	"custom": {
+		"sodium:options": {
+			"mixin.workarounds.context_creation": false
+		}
+	}
+}
